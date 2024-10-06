@@ -88,6 +88,21 @@ Authentication Routes
 | `DATABASE_URL` |	Database connection string for Prisma |
 | `EMAIL_FOR_ADMIN` |	Admin's email to assign admin role |
 
+### 5. Screenshots
+
+#### Login
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/1be60d69-3b4b-4c6f-a515-5703e9ee8221">
+
+#### Home Page after Logged In
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/09f587dd-b15d-4b20-b206-d930c7044a93">
+
+#### Forecase Details in Home Page
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/2b6eddba-2c0e-426d-955a-f673ae991942">
+
+
 ### Key Points:
   1. **Overview**: Describes the project and the tech stack.
   2. **Setup Instructions**: Guides users through setting up both the backend and frontend.
