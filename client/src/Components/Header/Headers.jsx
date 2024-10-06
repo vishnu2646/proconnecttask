@@ -74,10 +74,10 @@ const Headers = () => {
                             isCurrentUserValid && (
                                 <>  
                                     <div className="btn-group dropstart">
-                                        <img src={currentUser.user?.image} className='dropdown-toggle' id="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: "50px", borderRadius: "50%" }} alt="" />
+                                        <img src={currentUser?.user?.image} className='dropdown-toggle' id="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: "50px", borderRadius: "50%" }} alt="" />
                                         <ul className="dropdown-menu">
                                             <li className="dropdown-item">
-                                                {currentUser.user?.displayName}
+                                                {currentUser?.user?.displayName}
                                             </li>
                                             <li className="dropdown-item" onClick={handleLogout}>
                                                 Logout
@@ -86,6 +86,15 @@ const Headers = () => {
                                     </div>
                                 </>
                             )
+                        }
+                        {
+                            !isCurrentUserValid && (
+                                <li>
+                                    <NavLink to="/login">
+                                        Login
+                                    </NavLink>
+                                </li>
+                            ) 
                         }
                     </ul>
                 </div>

@@ -29,7 +29,7 @@ const Dashboard = () => {
             updateToken(response.data.user.token);
         } catch (error) {
             console.log(error);
-            navigate("/");
+            navigate("/login");
         }
     };
 
