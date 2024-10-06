@@ -9,7 +9,7 @@ const Login = () => {
     });
 
     const loginwithgoogle = ()=>{
-        window.open("http://localhost:8000/auth/google/callback","_self")
+        window.open(`${process.env.REACT_APP_API_URL}/auth/google`,"_self")
     }
 
     const handleManualLogin = ()=>{
