@@ -18,7 +18,7 @@ const Dashboard = () => {
 
     const [weatherData, setWeatherData] = useState();
 
-    const [forecastData, setForcastData] = useState();
+    const [forecastData, setForecastData] = useState();
 
     const [filtredForcastData, setFiltredForcastData] = useState([]);
 
@@ -47,13 +47,13 @@ const Dashboard = () => {
             const forecastResponse = await response[1].json();
 
             setWeatherData(weatherResponse);
-            setForcastData(forecastResponse['list']);
+            setForecastData(forecastResponse['list']);
         }).catch(err => {
             console.error(err);
         });
     }
 
-    const handleForeCasteDetails = () => {
+    const handleForecastDetails = () => {
         const today = moment().format('DD-MM-YYYY'); 
         const tomorrow = moment().add(1, 'days').format('DD-MM-YYYY');
 
@@ -88,7 +88,7 @@ const Dashboard = () => {
         <div className='container'>
             <div className='d-flex align-items-center mt-3 gap-3'>
                 <span>Welcome, </span>{isCurrentUserValid && <h3>{currentUser.user?.displayName}</h3>}
-                <button className='btn btn-outline-info' onClick={handleForeCasteDetails}>Forecast Data</button>
+                <button className='btn btn-outline-info' onClick={handleForecastDetails}>Forecast Data</button>
             </div>
             {
                 weatherData && Object.keys(weatherData).length > 0 && (
