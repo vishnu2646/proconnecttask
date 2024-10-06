@@ -1,9 +1,9 @@
 import './App.css';
-import Home from './Pages/Home/Home';
-import Headers from './Components/Header/Headers';
-import Login from './Pages/Login/Login';
-import Dashboard from './Pages/Dashboard';
-import Error from './Pages/Error/Error';
+import Home from './pages/Home/Home';
+import Headers from './components/Header/Headers';
+import Login from './pages/Login/Login';
+import Dashboard from './pages/Dashboard';
+import Error from './pages/Error/Error';
 import { Route, Routes } from "react-router-dom"
 
 function App() {

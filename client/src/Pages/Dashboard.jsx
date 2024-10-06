@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import moment from 'moment';
 import { AuthContext } from '../context/AuthContext';
 import { TokenContext } from '../context/TokenContext';
-import moment from 'moment';
-import WeatherCard from '../Components/weatherCard/weatherCard';
+import WeatherCard from '../components/WeatherCard/WeatherCard';
 
 const Dashboard = () => {
 
@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/login/sucess", { withCredentials: true });
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/login/success`, { withCredentials: true });
             updateUser(response.data);
             updateToken(response.data.user.token);
         } catch (error) {
@@ -35,11 +35,11 @@ const Dashboard = () => {
 
     const fetchWeather = () => {
         const currentWeatherFetch = fetch(
-            'https://api.openweathermap.org/data/2.5/weather?q=chennai&appid=042ff49120b973c527a36199028dc5b5&units=metric'
+            `${process.env.REACT_APP_WEATHER_URL}/weather?q=chennai&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`
         );
 
         const forecastFetch = fetch(
-            'https://api.openweathermap.org/data/2.5/forecast?q=chennai&appid=042ff49120b973c527a36199028dc5b5&units=metric'
+            `${process.env.REACT_APP_WEATHER_URL}/forecast?q=chennai&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`
         );
 
         Promise.all([currentWeatherFetch, forecastFetch]).then(async (response) => {
@@ -97,7 +97,7 @@ const Dashboard = () => {
                     </div>
                 )
             }
-            <div className='d-flex align-items-center flex-wrap gap-3'>
+            <div className='d-flex align-items-center gap-3 w-100 overflow-auto'>
                 {
                     filtredForcastData && filtredForcastData?.map((data, index) => (
                         <div key={index}>

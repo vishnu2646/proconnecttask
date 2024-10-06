@@ -8,7 +8,7 @@ const WeatherCard = ({data, nodate}) => {
             <div className="card-body">
                 <div className='top'>
                     <div>
-                        {!nodate && <h5>{moment(data?.dt_txt).format('DD-MM-yyyy')}</h5>}
+                        {!nodate && <h5>{moment(data?.dt_txt).format('DD-MM-yyyy hh:mm')}</h5>}
                         <p className='mb-0'>{data?.name}</p>
                         <p className="weather-description">{data?.weather[0]?.description}</p>
                     </div>
