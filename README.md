@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Fullstack Google OAuth Application with React & Node.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a fullstack web application built with React (frontend) and Node.js/Express (backend), using Google OAuth for authentication. The backend uses Passport.js for handling OAuth, Prisma as the ORM, and JWT for token-based authentication.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Google OAuth 2.0 authentication
+- User session management with `express-session`
+- JWT-based authentication for API routes
+- User roles (e.g., admin, normal)
+- CORS handling for cross-origin requests
+- Secure storage of secrets with `.env` file
+- Prisma ORM for database access
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React
+- **Backend**: Node.js, Express, Passport.js (Google OAuth)
+- **Database**: Prisma (Sqlite3 etc.)
+- **Authentication**: Google OAuth 2.0, JWT
+- **Session Management**: express-session
+- **Environment Variables**: dotenv
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before running the project, ensure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v18.19.0 or later)
+- Sqlite3 (for Prisma)
+- Google Cloud account for OAuth credentials
 
-### `npm run build`
+## Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/vishnu2646/proconnecttask.git
+cd proconnecttask
+backend - cd server
+frontend - cd client
+Run Frontend - npm start
+Run Backend - npm start
 
-### `npm run eject`
+````
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Project structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+├── backend/                # Node.js + Express backend
+│   ├── routes/             # Express routes
+│   ├── controllers/        # Controller logic for handling requests
+│   ├── prisma/             # Prisma ORM setup
+│   ├── auth/               # Passport.js OAuth strategies
+│   ├── .env                # Environment variables for backend
+│   └── server.js           # Entry point for backend
+│
+├── frontend/               # React frontend
+│   ├── public/             # Static assets
+│   ├── src/                # React components and pages
+│   ├── .env                # Environment variables for frontend
+│   └── App.js              # Main React component
+│
+└── README.md               # Documentation
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. API Endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Authentication Routes
 
-## Learn More
+ - GET `/auth/google`: Initiates Google OAuth login
+ - GET `/auth/google/callback`: Handles Google OAuth callback
+ - GET `/login/success`: Returns user details after successful login
+ - GET `/logout`: Logs out the user and clears the session
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4.User Routes (Protected)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - GET `/api/user/profile`: Get the logged-in user's profile
 
-### Code Splitting
+|  Key   |  Description   |
+|--------|----------------|
+| `CLIENT_ID` | Google OAuth client ID |
+| `CLIENT_SECRET` |	Google OAuth client secret |
+| `CLIENT_URL` |	Frontend URL (e.g., http://localhost:3000) |
+| `PORT` |	Backend server port (default: 8000) |
+| `JWT_SECRET` |	Secret for signing JWTs |
+| `SESSION_SECRET` |	Secret for express-session |
+| `DATABASE_URL` |	Database connection string for Prisma |
+| `EMAIL_FOR_ADMIN` |	Admin's email to assign admin role |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Key Points:
+  1. **Overview**: Describes the project and the tech stack.
+  2. **Setup Instructions**: Guides users through setting up both the backend and frontend.
+  3. **API Endpoints**: Lists key routes for authentication and user management.
+  4. **Project Structure**: Shows how the project is organized.
+  5. **Environment Variables**: Details the required environment variables.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize this `README.md` to match your specific project needs!
