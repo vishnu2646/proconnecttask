@@ -5,8 +5,9 @@ import moment from 'moment';
 import { AuthContext } from '../../context/AuthContext';
 import { TokenContext } from '../../context/TokenContext';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
-import './dashboard.css';
 import AirPollution from '../../components/airPollution/AirPollution';
+import AirQualites from '../../components/airQualites/AirQualites';
+import './dashboard.css';
 
 const Dashboard = () => {
 
@@ -110,36 +111,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="qualualites mt-4 d-flex align-items-center gap-3 flex-wrap">
-                            <div className="card card-sm">
-                                <p className='type'>Humidity</p>
-                                <div className='d-flex align-items-center gap-5 justify-content-between'>
-                                    <img src={`icons/${weatherData?.weather[0]?.icon}.png`} width="40px" height="40px" alt="icons" />
-                                    <p className='value'>{weatherData?.main?.humidity}%</p>
-                                </div>
-                            </div>
-                            <div className="card card-sm">
-                                <p className='type'>Pressure</p>
-                                <div className='d-flex align-items-center gap-5 justify-content-between'>
-                                    <img src={`icons/${weatherData?.weather[0]?.icon}.png`} width="40px" height="40px" alt="icons" />
-                                    <p className='value'>{weatherData?.main?.pressure}hPa</p>
-                                </div>
-                            </div>
-                            <div className="card card-sm">
-                                <p className='type'>Wind</p>
-                                <div className='d-flex align-items-center gap-5 justify-content-between'>
-                                    <img src={`icons/${weatherData?.weather[0]?.icon}.png`} width="40px" height="40px" alt="icons" />
-                                    <p className='value'>{weatherData?.wind?.speed}m/s</p>
-                                </div>
-                            </div>
-                            <div className="card card-sm">
-                                <p className='type'>Feels Like</p>
-                                <div className='d-flex align-items-center gap-5 justify-content-between'>
-                                    <img src={`icons/${weatherData?.weather[0]?.icon}.png`} width="40px" height="40px" alt="icons" />
-                                    <p className='value'>{weatherData?.main?.feels_like}°C</p>
-                                </div>
-                            </div>
-                        </div>
+                        <AirQualites data={weatherData}/>
                     </div>
                 </div>
             </article>

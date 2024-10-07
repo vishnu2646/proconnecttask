@@ -1,0 +1,18 @@
+
+.sunset p, .sunrise p {
+    font-size: 18px;
+}
+
+.qualualites .card {
+    background-color: var(--background);
+    width: 200px;
+}
+
+.qualualites .card p.type {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+}
+
+.qualualites .card .value {
+    font-size: 18px;
+}

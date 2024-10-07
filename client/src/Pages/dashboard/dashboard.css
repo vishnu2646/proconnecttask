@@ -41,17 +41,6 @@
     font-size: 18px;
 }
 
-.quality-card {
-    background: var(--background) !important;
-    padding: 16px;
-    margin-top: 10px;
-    border-radius: var(--radius-16);
-}
-
-.twilight-card > .sunrise, .twilight-card > .sunset {
-    width: 100%;
-}
-
 .card-header .title-3, .card-list-item p {
     color: var(--on-surface-variant);
 }
@@ -70,23 +59,6 @@
     text-align: center;
 }
 
-.sunset p, .sunrise p {
-    font-size: 18px;
-}
-
-.qualualites .card {
-    background-color: var(--background);
-    width: 200px;
-}
-
-.qualualites .card p.type {
-    font-size: 18px;
-    color: var(--on-surface-variant);
-}
-
-.qualualites .card .value {
-    font-size: 18px;
-}
 
 .forecast {
     width: 100%;

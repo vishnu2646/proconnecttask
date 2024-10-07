@@ -5,7 +5,10 @@ import { AuthContext } from '../../context/AuthContext';
 import './header.css';
 
 const Headers = () => {
-    const [open, setOpen] = useState(false);  // Initialize state as false
+    const [open, setOpen] = useState(false);
+
+    const [toggleSearch, setToggleSearch] = useState(false);
+
     const { currentUser } = useContext(AuthContext);
 
     const isCurrentUserValid = currentUser && Object.keys(currentUser).length > 0;
@@ -13,6 +16,11 @@ const Headers = () => {
     const handleSidebar = () => {
         setOpen(!open);
     };
+
+    const handleToggleSearch = () => {
+        console.log('toggle');
+        setToggleSearch(!toggleSearch);
+    }
 
     return (
         <>
@@ -22,19 +30,18 @@ const Headers = () => {
                         <a href="/" className='logo'>
                             <img src="/icons/logo.png" alt="logo-img" width="100px" height="50px" />
                         </a>
-
-                        <div className="search-view" data-search-view>
+                        <div className={`search-view ${toggleSearch ? 'active' : ''}`} data-search-view>
                             <div className="search-wrapper">
                                 <input type="search" name='search' placeholder='Search City' className='search-field' autoComplete='off' data-search-field />
                                 <i className="fa-solid fa-search"></i>
 
-                                <button className="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                                <button className="icon-btn leading-icon has-state" aria-label="close search" onClick={handleToggleSearch}>
                                     <i className="fa-solid fa-arrow-left"></i>
                                 </button>
                             </div>
 
-                            <div className="search-result" data-search-result>
-                                <ul className='view-list' data-search-list>
+                            <div className="search-result">
+                                <ul className='view-list'>
                                     <li className="view-item">
                                         <span>
                                             <i className="fa-solid fa-location-crosshairs"></i>
@@ -51,7 +58,7 @@ const Headers = () => {
 
                         {isCurrentUserValid && (
                             <div className="header-actions">
-                                <button className="has-state icon-btn" aria-label='open search'>
+                                <button className="has-state icon-btn" onClick={handleToggleSearch}>
                                     <i className="fa-solid fa-search"></i>
                                 </button>
 
