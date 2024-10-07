@@ -2,7 +2,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Headers from './components/Header/Headers';
 import Login from './pages/Login/Login';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 import Error from './pages/Error/Error';
 import { Route, Routes } from "react-router-dom"
 

@@ -1,0 +1,62 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--background);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav.active {
+    width: 250px;
+}
+
+.sidenav ul {
+    padding: 20px;
+}
+
+.sidenav li:first-child {
+    text-align: right;
+}
+
+.sidenav li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.username {
+    font-size: 18px;
+}
+
+.accordion-collapse {
+    /* background-color: var(--background); */
+    color: var(--white);
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+    border: 0px;
+}
+
+.accordion-header .accordion-button {
+    background-color: var(--background);
+    color: var(--white);
+    padding-left: 0;
+}
+
+.accordion-header .accordion-button::after {
+    color: #fff !important;
+}
+
+.accordion-flush .accordion-item:last-child {
+    background-color: var(--background);
+}
+
+.accordion-body {
+    font-size: 18px;
+    padding-left: 0;
+    padding-top: 0;
+}

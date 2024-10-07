@@ -1,0 +1,127 @@
+
+.section:not(:last-child) {
+    margin-block-end: 16px;
+}
+
+.current-weather-card .weapper {
+    margin-block: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.current-weather-card .weapper-icon {
+    margin-inline: auto;
+}
+
+.current-weather-card > .body-3 {
+    text-transform: capitalize;
+}
+
+.current-weather-card > .meta-list {
+    margin-block-start: 16px;
+    padding-block-start: 16px;
+    border-block-start: 1px solid var(--outline);
+}
+
+.current-weather-card .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.current-weather-card .meta-item:not(:last-child) {
+    margin-block-end: 12px;
+}
+
+.current-weather-card .meta-text {
+    color: var(--on-surface-variant);
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.quality-card {
+    background: var(--background) !important;
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: var(--radius-16);
+}
+
+.twilight-card > .sunrise, .twilight-card > .sunset {
+    width: 100%;
+}
+
+.card-header .title-3, .card-list-item p {
+    color: var(--on-surface-variant);
+}
+
+.card-header .title-3 {
+    font-size: 16px;
+}
+
+.card-list-item p {
+    font-size: 16px;
+    text-align: center;
+}
+
+.card-list-item h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.sunset p, .sunrise p {
+    font-size: 18px;
+}
+
+.qualualites .card {
+    background-color: var(--background);
+    width: 200px;
+}
+
+.qualualites .card p.type {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+}
+
+.qualualites .card .value {
+    font-size: 18px;
+}
+
+.forecast {
+    width: 100%;
+}
+
+.forecast-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forecast-header .detials, .forecast-header .detials i {
+    font-size: 16px;
+}
+
+.forecastdatas {
+    width: inherit;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.forecast-card {
+    min-width: 150px; /* Set a fixed width for forecast cards */
+    flex-shrink: 0; /* Prevent the cards from shrinking */
+    text-align: center; /* Center the content */
+}
+
+.forecast-card p.date {
+    color: var(--on-surface-variant);
+    font-size: 20px;
+}
+  
+@media (max-width: 600px) {
+    .qualualites .card {
+        width: 100%;
+    }
+}

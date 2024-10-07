@@ -1,106 +1,71 @@
-import React, { useContext } from 'react'
-import "./header.css"
-import { NavLink } from "react-router-dom"
-import { AuthContext } from '../../context/AuthContext'
+/* eslint-disable jsx-a11y/anchor-has-content */
+import React, { useState, useContext } from 'react';
+import Sidebar from '../sidebar/Sidebar';
+import { AuthContext } from '../../context/AuthContext';
+import './header.css';
 
 const Headers = () => {
-    
+    const [open, setOpen] = useState(false);  // Initialize state as false
     const { currentUser } = useContext(AuthContext);
-
-    // logoout
-    const handleLogout = ()=>{
-        window.open("http://localhost:8000/logout","_self");
-        localStorage.clear();
-    }
 
     const isCurrentUserValid = currentUser && Object.keys(currentUser).length > 0;
 
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-                <div className="left">
-                    <h1>Pro Connect Task</h1>
-                </div>
-                <div className="right">
-                    <ul className='menus'>
-                        {
-                            isCurrentUserValid && currentUser?.user?.role === 'admin' && (
-                                <>
-                                    <li>
-                                        <NavLink to="/">
-                                            Home
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/">
-                                            Employee Master
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/">
-                                            Leave Master
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/">
-                                            Email setup
-                                        </NavLink>
-                                    </li>
-                                </>
-                            )
-                        }
-                        {
-                            isCurrentUserValid && currentUser?.user?.role === 'normal' && (
-                                <>
-                                    <li>
-                                        <NavLink to="/">
-                                            Reset Password
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/">
-                                            Apply Leave
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/">
-                                            Cancel Leave
-                                        </NavLink>
-                                    </li>
-                                </>
-                            )   
-                        }
-                        {
-                            isCurrentUserValid && (
-                                <>  
-                                    <div className="btn-group dropstart">
-                                        <img src={currentUser?.user?.image} className='dropdown-toggle' id="dropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: "50px", borderRadius: "50%" }} alt="" />
-                                        <ul className="dropdown-menu">
-                                            <li className="dropdown-item">
-                                                {currentUser?.user?.displayName}
-                                            </li>
-                                            <li className="dropdown-item" onClick={handleLogout}>
-                                                Logout
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </>
-                            )
-                        }
-                        {
-                            !isCurrentUserValid && (
-                                <li>
-                                    <NavLink to="/login">
-                                        Login
-                                    </NavLink>
-                                </li>
-                            ) 
-                        }
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    )
-}
+    const handleSidebar = () => {
+        setOpen(!open);
+    };
 
-export default Headers
+    return (
+        <>
+            <header className='header'>
+                {isCurrentUserValid && (
+                    <div className="container">
+                        <a href="/" className='logo'>
+                            <img src="/icons/logo.png" alt="logo-img" width="100px" height="50px" />
+                        </a>
+
+                        <div className="search-view" data-search-view>
+                            <div className="search-wrapper">
+                                <input type="search" name='search' placeholder='Search City' className='search-field' autoComplete='off' data-search-field />
+                                <i className="fa-solid fa-search"></i>
+
+                                <button className="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                                    <i className="fa-solid fa-arrow-left"></i>
+                                </button>
+                            </div>
+
+                            <div className="search-result" data-search-result>
+                                <ul className='view-list' data-search-list>
+                                    <li className="view-item">
+                                        <span>
+                                            <i className="fa-solid fa-location-crosshairs"></i>
+                                        </span>
+                                        <div>
+                                            <p className="item-title mb-0">Chennai</p>
+                                            <p className="label-2 item-subtitle">Tamil Nadu, India</p>
+                                        </div>
+                                        <a href="/" className="item-link has-state" data-search-toggler></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {isCurrentUserValid && (
+                            <div className="header-actions">
+                                <button className="has-state icon-btn" aria-label='open search'>
+                                    <i className="fa-solid fa-search"></i>
+                                </button>
+
+                                <div className='btn-primary-1 has-state' onClick={handleSidebar}>
+                                    <i className="fa-solid fa-bars"></i>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </header>
+            <Sidebar open={open} setOpen={setOpen} /> {/* Passing open and setOpen */}
+        </>
+    );
+};
+
+export default Headers;
