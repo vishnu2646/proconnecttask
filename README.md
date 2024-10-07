@@ -92,15 +92,15 @@ Authentication Routes
 
 #### Login
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/1be60d69-3b4b-4c6f-a515-5703e9ee8221">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4d73c911-c586-403e-a7ec-f56afeb68b54">
 
 #### Home Page after Logged In
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/09f587dd-b15d-4b20-b206-d930c7044a93">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/eaccc162-517d-4e21-bbc1-436ad6cbbbd1">
 
 #### Forecase Details in Home Page
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/2b6eddba-2c0e-426d-955a-f673ae991942">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b34803ec-b181-4e38-a929-69c945a41e70">
 
 
 ### Key Points:
