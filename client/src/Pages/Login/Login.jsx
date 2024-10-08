@@ -22,7 +22,7 @@ const Login = () => {
             <div className="login-page">
                 <h1 style={{textAlign:"center"}}>Login</h1>
                 <div className="form">
-                    <form className='login-form'>
+                    <form className='login-form card card-lg'>
                         <input type="text" name="username" id="username" placeholder='username' onChange={(e) => setLoginForm({ ...loginForm, username: e.target.value })}/>
                         <input type="password" name="password" id="password" placeholder='password' onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })} />
                         <button onClick={handleManualLogin}>Login</button>

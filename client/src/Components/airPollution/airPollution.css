@@ -1,0 +1,13 @@
+.quality-card {
+    background-color: var(--background);
+    padding: 16px;
+    border-radius: var(--radius-16);
+}
+
+.quality-card .card-list-item p {
+    margin-bottom: 0;
+}
+
+.quality-card .card-list-item h1 {
+    font-size: 30px;
+}

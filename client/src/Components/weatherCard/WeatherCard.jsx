@@ -4,48 +4,83 @@ import './weatherCard.css';
 
 const WeatherCard = ({data, nodate}) => {
     return (
-        <div className="card weather-card">
-            <div className="card-body">
-                <div className='top'>
-                    <div>
-                        {!nodate && <h5>{moment(data?.dt_txt).format('DD-MM-yyyy hh:mm')}</h5>}
-                        <p className='mb-0'>{data?.name}</p>
-                        <p className="weather-description">{data?.weather[0]?.description}</p>
+        <>
+            <section className='section current-weather'>
+                <div className="card card-lg current-weather-card">
+                    <h2 className="title-2 card-title">Now</h2>
+
+                    <div className="weapper">
+                        <p className='heading'>{Math.round(data?.main?.temp)}°C</p>
+                        <img src={`/icons/${data?.weather[0]?.icon}.png`} alt="weathericon" width="100" height="100" className='weather-icon' />
                     </div>
-                    <img
-                        alt="weather"
-                        className="weather-icon"
-                        src={`icons/${data?.weather[0]?.icon}.png`}
-                    />
+
+                    <p className="body-3">{data?.weather[0]?.description}</p>
+
+                    <ul className="meta-list">
+                        <li className="meta-item">
+                            <i className="fa-solid fa-calendar-days"></i>
+
+                            <p className='title-3 meta-text'>{moment(data?.dt_txt).format('LL')}</p>
+                        </li>
+
+                        <li className="meta-item">
+                            <i className="fa-solid fa-location"></i>
+
+                            <p className='title-3 meta-text'>{data?.name}</p>
+                        </li>
+                    </ul>
                 </div>
-                <div className='bottom'>
-                    <p className="temperature">{Math.round(data?.main?.temp)}°C</p>
-                    <div className="details">
-                        <div className="parameter-row">
-                            <span className="parameter-label">Details</span>
-                        </div>
-                        <div className="parameter-row">
-                            <span className="parameter-label">Feels like</span>
-                            <span className="parameter-value">
-                            {Math.round(data?.main?.feels_like)}°C
-                            </span>
-                        </div>
-                        <div className="parameter-row">
-                            <span className="parameter-label">Wind</span>
-                            <span className="parameter-value">{data?.wind?.speed} m/s</span>
-                        </div>
-                        <div className="parameter-row">
-                            <span className="parameter-label">Humidity</span>
-                            <span className="parameter-value">{data?.main?.humidity}%</span>
-                        </div>
-                        <div className="parameter-row">
-                            <span className="parameter-label">Pressure</span>
-                            <span className="parameter-value">{data?.main?.pressure} hPa</span>
-                        </div>
-                    </div>
+            </section>
+            <section className='section forecast'>
+                <h2 className="title-2"> 5 Days Forecast</h2>
+                
+                <div className="card card-lg forecast-card">
+                    <ul>
+                        <li className='card-item'>
+                            <div className="icon-wrapper">
+                                <img src="/icons/01n.png" width="26" height="26px" className='weather-icon' alt="weather-icon" />
+
+                                <span className="sapn">
+                                    <p className="title-2">25</p>
+                                </span>
+                            </div>
+
+                            <p className="label-1">17 Feb</p>
+
+                            <p className='label-1'>Friday</p>
+                        </li>
+
+                        <li className='card-item'>
+                            <div className="icon-wrapper">
+                                <img src="/icons/01n.png" width="26" height="26px" className='weather-icon' alt="weather-icon" />
+
+                                <span className="sapn">
+                                    <p className="title-2">25</p>
+                                </span>
+                            </div>
+
+                            <p className="label-1">17 Feb</p>
+
+                            <p className='label-1'>Friday</p>
+                        </li>
+
+                        <li className='card-item'>
+                            <div className="icon-wrapper">
+                                <img src="/icons/01n.png" width="26" height="26px" className='weather-icon' alt="weather-icon" />
+
+                                <span className="sapn">
+                                    <p className="title-2">25</p>
+                                </span>
+                            </div>
+
+                            <p className="label-1">17 Feb</p>
+
+                            <p className='label-1'>Friday</p>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 };
 
