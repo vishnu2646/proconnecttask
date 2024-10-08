@@ -37,8 +37,9 @@ Before running the project, ensure you have the following installed:
 
 git clone https://github.com/vishnu2646/proconnecttask.git
 cd proconnecttask
-backend - cd server
+backend - cd server 
 frontend - cd client
+npm i - for both server and client
 Run Frontend - npm start
 Run Backend - npm start
 
