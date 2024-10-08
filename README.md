@@ -92,15 +92,24 @@ Authentication Routes
 
 #### Login
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/4d73c911-c586-403e-a7ec-f56afeb68b54">
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/0dfbb231-1b1a-4c90-9608-f28a55527631">
+
 
 #### Home Page after Logged In
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/eaccc162-517d-4e21-bbc1-436ad6cbbbd1">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4fc6e069-630c-434a-864e-2931b679eec7">
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/fc78238e-998f-4af2-974e-11626679a844">
 
 #### Forecase Details in Home Page
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/b34803ec-b181-4e38-a929-69c945a41e70">
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/a3245925-6b86-4a2e-9ef6-9390b09190a3">
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/bb756ee8-2a2d-4f1a-bb36-d2461ea05ccb">
+
+### Sidebar toggled with options
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/5d1702cb-3a45-48ce-9e4f-bb58f8066f63">
 
 
 ### Key Points:
