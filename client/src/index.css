@@ -46,8 +46,10 @@ html {
 }
 
 body {
-    background: var(--background);
-    color: var(--on-background);
+    /* background: var(--background); */
+    background: #857e92;
+    /* color: var(--on-background); */
+    color: var(--background);
     font-size: var(--body-3);
     overflow: hidden;
     margin: 0;
@@ -76,12 +78,16 @@ a, img, span, input, button {
     display: block;
 }
 
+h1, h3, h2, p, li {
+    color: var(--background);
+}
+
 img {
     height: auto;
 }
 
 a {
-    color: inherit;
+    /* color: inherit; */
     text-decoration: none;
 }
 
@@ -208,7 +214,8 @@ sub, sup {
 }
 
 .card {
-    background-color: var(--surface);
+    /* background-color: var(--surface); */
+    background-color: var(--white);
     color: var(--on-surface);
 }
 
@@ -223,7 +230,7 @@ sub, sup {
 }
 
 .heading {
-    color: var(--white);
+    /* color: var(--white); */
     font-size: 5.6rem;
     line-height: 1.1;
 }

@@ -28,6 +28,10 @@
     font-size: 18px;
 }
 
+.sidenav li a, .sidenav li {
+    color: var(--white);
+}
+
 .username {
     font-size: 18px;
 }

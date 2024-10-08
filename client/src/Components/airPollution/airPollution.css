@@ -1,5 +1,6 @@
 .quality-card {
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background-color: var(--white);
     padding: 16px;
     border-radius: var(--radius-16);
 }
