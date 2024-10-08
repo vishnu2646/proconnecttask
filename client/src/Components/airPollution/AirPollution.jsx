@@ -7,7 +7,7 @@ const AirPollution = () => {
 
     const fetchAirPollution = async () => {
         try {
-            const responseData = await axios.get(`${process.env.REACT_APP_WEATHER_URL}/air_pollution?lat=${process.env.REACT_APP_LATTITUDE}&lon=${process.env.REACT_APP_LONGITUDE}&appid=042ff49120b973c527a36199028dc5b5&units=metric`);
+            const responseData = await axios.get(`${process.env.REACT_APP_WEATHER_URL}/air_pollution?lat=${process.env.REACT_APP_LATTITUDE}&lon=${process.env.REACT_APP_LONGITUDE}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`);
             setAirPollutionData(responseData.data['list'][0]);
         } catch (error) {
             console.log(error);
