@@ -43,7 +43,7 @@
 .form {
     position: relative;
     z-index: 1;
-    background: var(--background);
+    /* background: var(--background); */
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -54,9 +54,11 @@
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: var(--surface);
+    /* background: var(--surface); */
     width: 100%;
-    border: 1px solid var(--on-surface);
+    /* border: 1px solid var(--on-surface); */
+    border: 1px solid var(--background);
+    color: var(--background);
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
@@ -68,7 +70,8 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: var(--background);
+    /* background: var(--background); */
+    background: #857e92;
     width: 100%;
     border: 0;
     padding: 15px;

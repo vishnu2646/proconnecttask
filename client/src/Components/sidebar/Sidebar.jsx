@@ -53,6 +53,9 @@ const Sidebar = ({ open, setOpen }) => {
                 {
                     isCurrentUserValid && currentUser?.user?.role === 'normal' && (
                         <>
+                            <li onClick={handleClose}>
+                                &times;
+                            </li>
                             <li>
                                 <NavLink to="/">
                                     Reset Password

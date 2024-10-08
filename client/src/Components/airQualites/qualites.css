@@ -4,7 +4,9 @@
 }
 
 .qualualites .card {
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background-color: var(--white);
+    border: 1px solid var(--background);
     width: 200px;
 }
 
